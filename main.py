@@ -5,8 +5,11 @@ import http.client
 import json
 import pandas as pd
 from tabulate import tabulate
+from dotenv import load_dotenv
 
-GOOGLE_API_KEY='AIzaSyC5QjrDxW8gKgaDfHnrXp4xA15MXS8TSIQ'
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
 model = genai.GenerativeModel('gemini-1.5-flash')
